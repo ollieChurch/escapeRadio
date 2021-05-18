@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Paradox Radio Admin</title>
+        <link href="css/stylesheet.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <img class="image-logo" src="images/logo.png" />
+            <h1>Paradox Radio</h1>
+        </header>
+        
+        <main>
+            <div class="container container-left">
+                <div id="playlist-container">
+                    <button class="button-controls" id="controls-setUp">Set Up</button>
+                </div>
+                
+                <div class="clue-container">
+                    <textarea id="clue-input"></textarea>
+                    <button id="button-clue">Send Clue</button>
+                </div>
+            </div> <!--  container-left  -->
+            
+            <div class="container container-right">
+                <div class="trackDisplay-container">
+                        <div id="trackDisplay-progressBar"></div>
+                        <h3>Now Playing</h3>
+                        <p id="currentTrack"></p>
+                        <p><em>time left on track <span id="trackTimeRemaining">00:00</span></em></p>
+                </div>
+                
+                <div class="time-container">
+                    <h2 class="time-title">Time Remaining</h2>
+                    <div class=time-timeDisplay>
+                        <input class="timeDisplay-box" id="timeDisplay-mins" type="text" value="" readonly />
+                        <p>:</p>
+                        <input class="timeDisplay-box" id="timeDisplay-secs" type="text" value="" readonly />
+                    </div>
+                </div>
+                
+                <div class="controls-container">
+                    <div class="controls-buttons">
+                        <button class="button-controls" id="controls-play">Play</button>
+                        <button class="button-controls" id="controls-pause">Pause</button>
+                        <button class="button-controls" id="controls-reset">Reset</button>
+                    </div>
+                    <p class="controls-note"><em>IMPORTANT: pausing the time will also pause the audio</em></p>
+                </div>
+                
+                <div class="ending-container">
+                    <div id="ending-buttons">
+                        <button class="button-ending" id="button-ending-perfectWin">Perfect Win</button>
+                        <button class="button-ending" id="button-ending-earlyWin">Early Win</button>
+                        <button class="button-ending button-ending-selected" id="button-ending-fail">Fail</button>
+                    </div>
+                    
+                    <button id="button-ending-play">!! PLAY ENDING NOW !!</button>
+                </div> <!--  ending-container  -->
+            </div> <!--  container-right  -->
+        </main>
+        
+        <div class="popUp" id="popUp-endGame">
+            <div class="popUp-textBox">
+                <h2>The team took <span id="minsTaken">00</span> minutes and <span id="secsTaken">00</span> seconds</h2>
+                <a href="#" id="popUp-close">X</a>
+            </div>
+        </div>
+        
+        <script src="node_modules/howler/src/howler.core.js"></script>
+        <script src="js/radio.js" type="module"></script>
+    </body>
+</html>

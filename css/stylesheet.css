@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.image-logo {
+    height: 10vh;
+    padding: .75em;
+    margin-left: .5em;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 .5em;
+    border-radius: 5px;
+    height: 85vh;
+}
+
+/* ===== LEFT SIDE ===== */
+
+#playlist-container,
+.clue-container {
+    width: 100%;
+	height: 50%;
+    border-radius: 5px;
+}
+
+/* ===== PLAYLIST ===== */
+
+#playlist-container {
+    background-color: lightgoldenrodyellow;
+    margin-bottom: 1em;
+    padding: .5em 0;
+    overflow: scroll;
+}
+
+.playlist-trackCard {
+    padding: 1em 1em 1em 2em;
+    border-bottom: 2px dotted black;
+    color: black;
+    cursor: pointer;
+}
+
+.nowPlaying {
+    color: hotpink;
+}
+
+.played {
+    color: lightgray;
+}
+
+/* ===== CLUE SYSTEM ===== */
+
+.clue-container {
+	background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#clue-input {
+    width: 95%;
+    height: 80%;
+    margin: 1em 0;
+    resize: none;
+}
+
+#button-clue {
+    width: 40%;
+	font-size: 1rem;
+    padding: 0.75em 1.75em; 
+    margin: 0 .75em .5em 0;
+    align-self: flex-end;
+    background-color: darkseagreen;
+    color: white;
+    font-weight: bold;
+}
+
+/* ===== TRACK DISPLAY ===== */
+
+.trackDisplay-container,
+#trackDisplay-progressBar {
+    border-radius: 5px;
+}
+
+.trackDisplay-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+	width: 100%;
+    height: 100px;
+    padding: 1em;
+    text-align: center;
+	background-color: palegreen; 
+    overflow: hidden;
+}
+
+#trackDisplay-progressBar {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    background-color: lightcyan;
+    opacity: 0.75;
+    transition: right 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.trackDisplay-container h3,
+.trackDisplay-container p {
+	z-index: 2;
+}
+
+/* ===== TIMER ===== */
+
+.time-title {
+	text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.time-timeDisplay {
+	display: flex;
+    font-size: 4rem;
+}
+
+.timeDisplay-box {
+    font-size: inherit;
+	width: 1.5em;
+    height: 1.5em;
+    margin: 0 .25em;
+    text-align: center;
+}
+
+/* ===== CONTROLS ===== */
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-controls {
+    font-size: 1rem;
+    padding: 0.75em 1.75em;
+	margin: 0 .5em .5em .5em;
+    background: lightgray;
+}
+
+#controls-setUp {
+	background: lightgoldenrodyellow;
+}
+
+.controls-note {
+    color: firebrick;
+}
+
+/* ===== ENDING ===== */
+
+.ending-container {
+	background-color: lightcoral;
+    border: black 2px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 1em;
+}
+
+/* ===== ENDING BUTTONS ===== */
+
+#ending-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.button-ending {
+	width: 30%;
+    height: 100px;
+    background-color: darkcyan;
+    border: 2px solid black;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.button-ending-selected {
+    background-color: purple;
+}
+
+#button-ending-play {
+    background-color: palegoldenrod;
+    background-image: url(../images/hazard-background.jpg);
+    background-size: cover;
+    background-blend-mode:color;
+    width: 100%;
+    padding: .25em 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ===== ENDING POP-UP ===== */
+
+.popUp {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popUp-textBox {
+	background: red;
+    border: 2px black solid;
+    border-radius: 5px;
+    color: white;
+    padding: 3em 2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#popUp-close {
+	position: absolute;
+    top: 0;
+    right: 0;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: inherit;
+    padding: .25em .5em;
+    text-decoration: none;
+}
+
+#popUp-close:hover {
+	color: black;
+}
