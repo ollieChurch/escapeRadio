@@ -1,46 +1,134 @@
 export const musicData = [
     {
-        name: "Presenter - intro to track 10",
-        src: "../audio/presenter1.mp3",
+        name: "Alex Swift Show Start",
+        src: "../audio/1ParadoxRadio.mp3",
     },
     {
-        name: "I Don't Recognise Myself - Joe Carabine",
-        src: "../audio/I_Dont_Recognise_Myself.mp3",
+        name: "Alex Swift Track 10 Intro",
+        src: "../audio/2ParadoxRadio.mp3",
     },
     {
-        name: "Presenter - intro to track 9",
-        src: "../audio/presenter2.mp3",
+        name: "Track 10 - I Don't Recognise Myself ",
+        src: "../audio/3ParadoxRadio.mp3",
     },
     {
-        name: "Stranger - The Riversiders",
-        src: "../audio/Stranger.mp3",
+        name: "Alex Swift Track 10 Outro",
+        src: "../audio/4ParadoxRadio.mp3",
     },
     {
-        name: "Commercials - block 1",
-        src: "../audio/commercial1.mp3",
+        name: "Alex Swift Track 9 Intro",
+        src: "../audio/5ParadoxRadio.mp3",
     },
     {
-        name: "Presenter - intro to track 8",
-        src: "../audio/presenter3.mp3",
+        name: "Track 9 Placeholder",
+        src: "../audio/6ParadoxRadio.mp3",
     },
     {
-        name: "Wolves - The White Lakes",
-        src: "../audio/Wolves.mp3",
+        name: "Ad Break",
+        src: "../audio/7ParadoxRadio.mp3",
     },
     {
-        name: "Better Off Now That You're Gone - Luke Richards",
-        src: "../audio/Better_Off_Now_That_Youre_Gone.m4a",
+        name: "Jack Mellow Escape Rooms (Unfinished)",
+        src: "../audio/8ParadoxRadio.mp3",
     },
     {
-        name: "Out Of Our Minds - Amberlake",
-        src: "../audio/Out_Of_Our_Minds.mp3",
+        name: "Alex Swift Track 8 Intro",
+        src: "../audio/9ParadoxRadio.mp3",
     },
     {
-        name: "Summer (She Won't Wait) - The White Lakes",
-        src: "../audio/Summer.mp3",
+        name: "Track 8 - Shadows",
+        src: "../audio/10ParadoxRadio.mp3",
     },
     {
-        name: "Runaway - Yellowlees",
-        src: "../audio/Runaway.mp3",
+        name: "Alex Swift Track 7 Intro (Unfinished)",
+        src: "../audio/11ParadoxRadio.mp3",
     },
+    {
+        name: "Track 7 Placeholder",
+        src: "../audio/12ParadoxRadio.mp3",
+    },
+    {
+        name: "Ad Break",
+        src: "../audio/13ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Competition Fail",
+        src: "../audio/14ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Track 6 Intro",
+        src: "../audio/15ParadoxRadio.mp3",
+    },
+    {
+        name: "Track 6 Stranger",
+        src: "../audio/16ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Halfway Anouncement",
+        src: "../audio/17ParadoxRadio.mp3",
+    },
+    {
+        name: "Halfway Recap (Unfinished)",
+        src: "../audio/18ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Halfway Outro",
+        src: "../audio/19ParadoxRadio.mp3",
+    },
+    {
+        name: "Jack Mellow Yellowlees Interview (Unfinished)",
+        src: "../audio/20ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Track 5 Intro",
+        src: "../audio/21ParadoxRadio.mp3",
+    },
+    {
+        name: "Track 5 Placeholder",
+        src: "../audio/22ParadoxRadio.mp3",
+    },
+    {
+        name: "Ad Break",
+        src: "../audio/23ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Track 4 Intro",
+        src: "../audio/24ParadoxRadio.mp3",
+    },
+    {
+        name: "Track 4 - Out Of Our Minds",
+        src: "../audio/25ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Competition Win (Unfinished)",
+        src: "../audio/26ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Track 3 Intro",
+        src: "../audio/27ParadoxRadio.mp3",
+    },
+    {
+        name: "Track 3 Placeholder",
+        src: "../audio/28ParadoxRadio.mp3",
+    },
+    {
+        name: "Ad Break",
+        src: "../audio/29ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Track 2 Intro",
+        src: "../audio/30ParadoxRadio.mp3",
+    },
+    {
+        name: "Track 2 - Runaway",
+        src: "../audio/31ParadoxRadio.mp3",
+    },
+    {
+        name: "Alex Swift Track 2 Outro",
+        src: "../audio/32ParadoxRadio.mp3",
+    },
+    {
+        name: "Ad Break",
+        src: "../audio/33ParadoxRadio.mp3",
+    }
 ]
