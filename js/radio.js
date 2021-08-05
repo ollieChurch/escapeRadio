@@ -22,9 +22,9 @@ const earlyEndingButton = document.getElementById("button-ending-earlyWin")
 const perfectEndingButton = document.getElementById("button-ending-perfectWin")
 const playEndingButton = document.getElementById("button-ending-play")
 
-const failEndingTrack = "placeholder_fail"
-const earlyEndingTrack = "placeholder_early"
-const perfectEndingTrack = "placeholder_perfect"
+const failEndingTrack = "paradoxRadioFail"
+const earlyEndingTrack = "paradoxRadioEarly"
+const perfectEndingTrack = "paradoxRadioOnTime"
 
 let selectedEndingButton
 let selectedEndTrack
