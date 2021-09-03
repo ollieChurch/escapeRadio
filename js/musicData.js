@@ -20,7 +20,7 @@ export const musicData = [
         src: "../audio/5ParadoxRadio.mp3",
     },
     {
-        name: "Track 9 Placeholder",
+        name: "Track 9 - Don't Lie To Me",
         src: "../audio/6ParadoxRadio.mp3",
     },
     {
@@ -28,7 +28,7 @@ export const musicData = [
         src: "../audio/7ParadoxRadio.mp3",
     },
     {
-        name: "Jack Mellow Escape Rooms (Unfinished)",
+        name: "Jack Mellow Escape Rooms",
         src: "../audio/8ParadoxRadio.mp3",
     },
     {
@@ -40,11 +40,11 @@ export const musicData = [
         src: "../audio/10ParadoxRadio.mp3",
     },
     {
-        name: "Alex Swift Track 7 Intro (Unfinished)",
+        name: "Alex Swift Track 7 Intro",
         src: "../audio/11ParadoxRadio.mp3",
     },
     {
-        name: "Track 7 Placeholder",
+        name: "Track 7 - My Summer Love",
         src: "../audio/12ParadoxRadio.mp3",
     },
     {
@@ -68,7 +68,7 @@ export const musicData = [
         src: "../audio/17ParadoxRadio.mp3",
     },
     {
-        name: "Halfway Recap (Unfinished)",
+        name: "Halfway Recap",
         src: "../audio/18ParadoxRadio.mp3",
     },
     {
@@ -76,7 +76,7 @@ export const musicData = [
         src: "../audio/19ParadoxRadio.mp3",
     },
     {
-        name: "Jack Mellow Yellowlees Interview (Unfinished)",
+        name: "Jack Mellow Yellowlees Interview",
         src: "../audio/20ParadoxRadio.mp3",
     },
     {
@@ -84,7 +84,7 @@ export const musicData = [
         src: "../audio/21ParadoxRadio.mp3",
     },
     {
-        name: "Track 5 Placeholder",
+        name: "Track 5 - Fleeting Times",
         src: "../audio/22ParadoxRadio.mp3",
     },
     {
@@ -100,7 +100,7 @@ export const musicData = [
         src: "../audio/25ParadoxRadio.mp3",
     },
     {
-        name: "Alex Swift Competition Win (Unfinished)",
+        name: "Alex Swift Competition Win",
         src: "../audio/26ParadoxRadio.mp3",
     },
     {
@@ -108,7 +108,7 @@ export const musicData = [
         src: "../audio/27ParadoxRadio.mp3",
     },
     {
-        name: "Track 3 Placeholder",
+        name: "Track 3 - Say Hey",
         src: "../audio/28ParadoxRadio.mp3",
     },
     {
