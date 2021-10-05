@@ -17,14 +17,30 @@ header {
     height: 10vh;
     padding: .75em;
     margin-left: .5em;
+    /* filter: invert(1); */
 }
 
 main {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1000px;
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    grid-auto-rows: 1fr;
+    height: 85vh;
+    grid-gap: .5em;
+    grid-template-areas: 
+        'trac clue'
+        'play clue'
+        'play clue'
+        'play clue'
+        'play time'
+        'play time'
+        'play time'
+        'play stop';
+    max-width: 1500px;
     margin: 0 auto;
+    padding: 0 1em;
 }
+
+
 
 h1,
 h2,
@@ -39,38 +55,22 @@ button {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    margin: 0 .5em;
+    color: black;
     border-radius: 5px;
-    height: 85vh;
-}
-
-/* ===== LEFT SIDE ===== */
-
-#playlist-container,
-.clue-container {
-    width: 100%;
-	height: 50%;
-    border-radius: 5px;
+    border: black solid 1px;
 }
 
 /* ===== PLAYLIST ===== */
 
 #playlist-container {
-    background-color: lightgoldenrodyellow;
-    margin-bottom: 1em;
     padding: .5em 0;
-    overflow: scroll;
+    overflow-y: scroll;
+    grid-area: play;
 }
 
 .playlist-trackCard {
     padding: 1em 1em 1em 2em;
     border-bottom: 2px dotted black;
-    color: black;
     cursor: pointer;
 }
 
@@ -84,52 +84,83 @@ button {
 
 /* ===== CLUE SYSTEM ===== */
 
-.clue-container {
-	background-color: lightcyan;
+#clue-container {
+	/* background-color: lightcyan; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    grid-area: clue;
+    padding: 2em 1.5em 1em;
 }
 
 #clue-input {
-    width: 95%;
-    height: 80%;
-    margin: 1em 0;
+    width: 100%;
+    margin-bottom: .5em;
     resize: none;
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: .5em;
 }
 
-#button-clue {
+.container-clueButtons {
+    display: flex;
+    align-self: flex-end;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.clueButtons {
     width: 40%;
 	font-size: 1rem;
     padding: 0.75em 1.75em; 
-    margin: 0 .75em .5em 0;
-    align-self: flex-end;
-    background-color: darkseagreen;
-    color: white;
+    /* margin: 0 0 .5em 0; */
     font-weight: bold;
+}
+
+#button-send {
+    background-color: palegreen;
+    margin-left: 1em;
+}
+
+#button-hide {
+    background-color: palegoldenrod;
 }
 
 /* ===== TRACK DISPLAY ===== */
 
-.trackDisplay-container,
+
+
+.trackDisplay-container {
+    grid-area: trac;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1em .5em 1em;
+}
+
+.trackDisplay-visual,
 #trackDisplay-progressBar {
     border-radius: 5px;
 }
 
-.trackDisplay-container {
-    position: relative;
+.trackDisplay-visualContainer {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid black;
+    width: 100%;
+}
+
+.trackDisplay-visual {
+    position: relative;
 	width: 100%;
-    height: 100px;
-    padding: 1em;
-    text-align: center;
-	background-color: palegreen; 
+    height: 100%;
     overflow: hidden;
+    border: 2px solid black;
+    background: lightgray;
+    margin-right: 1em;
 }
 
 #trackDisplay-progressBar {
@@ -138,18 +169,26 @@ button {
     height: 100%;
     top: 0;
     right: 100%;
-    background-color: lightcyan;
-    opacity: 0.75;
+    background-color: greenyellow; 
     transition: right 1s;
     transition-timing-function: ease-in-out;
 }
 
-.trackDisplay-container h3,
-.trackDisplay-container p {
-	z-index: 2;
+/* ===== TIMER ===== */
+
+.timeAndControls-container {
+    grid-area: time;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .5em 0;
 }
 
-/* ===== TIMER ===== */
+.time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .time-title {
 	text-align: center;
@@ -193,7 +232,8 @@ button {
 }
 
 #controls-setUp {
-	background: lightgoldenrodyellow;
+	background: green;
+    color: white;
 }
 
 .controls-note {
@@ -203,34 +243,24 @@ button {
 /* ===== ENDING ===== */
 
 .ending-container {
-	background-color: lightcoral;
-    border: black 2px solid;
-    border-radius: 10px;
+    grid-area: stop;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-image: url(../images/hazard-background.jpg); */
+    background-size: cover;
     width: 100%;
     padding: 1em;
 }
 
-/* ===== ENDING BUTTONS ===== */
-
-#ending-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: .5em;
-}
-
 .button-ending {
-	width: 30%;
-    height: 100px;
-    background-color: darkcyan;
+    height: 3em;
+    width: 10em;
+    background-color: red;
     border: 2px solid black;
     color: white;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
-}
-
-.button-ending-selected {
-    background-color: purple;
 }
 
 #button-ending-play {
@@ -281,4 +311,26 @@ button {
 
 #popUp-close:hover {
 	color: black;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+@media(max-width:650px) {
+    main {
+        height: unset;
+        min-height: 85vw;
+        grid-template-columns: 1fr;
+        grid-auto-rows: unset;
+        grid-template-areas: 
+        'time'
+        'stop'
+        'clue'
+        'trac'
+        'play';
+    }
+
+    .time-container {
+        margin-bottom: .75em;
+    }
+    
 }

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Paradox Radio Admin</title>
-        <link href="css/stylesheet.css" rel="stylesheet">
+        <link href="css/admin.css" rel="stylesheet">
     </head>
     
     <body>
@@ -12,25 +12,37 @@
         </header>
         
         <main>
-            <div class="container container-left">
-                <div id="playlist-container">
-                    <button class="button-controls" id="controls-setUp">Set Up</button>
-                </div>
-                
-                <div class="clue-container">
-                    <textarea id="clue-input"></textarea>
-                    <button id="button-clue">Send Clue</button>
-                </div>
-            </div> <!--  container-left  -->
+            <div class="container" id="playlist-container">
+                <button class="button-controls" id="controls-setUp">Set Up</button>
+            </div>
             
-            <div class="container container-right">
-                <div class="trackDisplay-container">
-                        <div id="trackDisplay-progressBar"></div>
-                        <h3>Now Playing</h3>
-                        <p id="currentTrack"></p>
-                        <p><em>time left on track <span id="trackTimeRemaining">00:00</span></em></p>
+            <div class="container" id="clue-container">
+                <textarea 
+                    id="clue-input" 
+                    maxlength='200' 
+                    rows='6'
+                    placeholder='write your custom message here'
+                ></textarea>
+                <div class='container-clueButtons'>
+                    <button id='button-hide' class='clueButtons'>Hide Clue</button>
+                    <button id="button-send" class='clueButtons'>Send Clue</button>
                 </div>
-                
+            </div>
+        
+            <div class="container trackDisplay-container">
+                    <h3>Now Playing</h3>
+                    <p id="currentTrack"></p>
+                    <div class="trackDisplay-visualContainer">
+                        <div class="trackDisplay-visual">
+                            <div id="trackDisplay-progressBar"></div>
+                        </div>
+                        <p class='trackDisplay-visual-text'>
+                            <span id="trackTimeRemaining">00:00</span></em>
+                        </p>
+                    </div>
+            </div>
+            
+            <div class="container timeAndControls-container">
                 <div class="time-container">
                     <h2 class="time-title">Time Remaining</h2>
                     <div class=time-timeDisplay>
@@ -48,17 +60,12 @@
                     </div>
                     <p class="controls-note"><em>IMPORTANT: pausing the time will also pause the audio</em></p>
                 </div>
-                
-                <div class="ending-container">
-                    <div id="ending-buttons">
-                        <button class="button-ending" id="button-ending-perfectWin">Perfect Win</button>
-                        <button class="button-ending" id="button-ending-earlyWin">Early Win</button>
-                        <button class="button-ending button-ending-selected" id="button-ending-fail">Fail</button>
-                    </div>
-                    
-                    <button id="button-ending-play">!! PLAY ENDING NOW !!</button>
-                </div> <!--  ending-container  -->
-            </div> <!--  container-right  -->
+            </div>
+            
+            <div class="container ending-container">
+                    <button class="button-ending" id="button-ending-perfectWin">Perfect Win</button>
+                    <button class="button-ending" id="button-ending-earlyWin">Early Win</button>
+            </div> <!--  ending-container  -->
         </main>
         
         <div class="popUp" id="popUp-endGame">
@@ -70,5 +77,6 @@
         
         <script src="node_modules/howler/src/howler.core.js"></script>
         <script src="js/radio.js" type="module"></script>
+        <script src="js/clueSystem.js" type="module"></script>
     </body>
 </html>

@@ -1,0 +1,66 @@
+body {
+    background-image: url('../images/playerBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container-frosted {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 2fr .5fr;
+    grid-gap: 1em;
+    padding-bottom: 1em;
+
+}
+
+h1 {
+    font-size: 6rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .5em 0 0 0;
+    margin: 0;
+}
+
+#clue-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    max-width: 1000px;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+#button-request {
+    width: fit-content;
+    padding: .75em 1em;
+    font-size: 2rem;
+    border: 10px groove rgba(178, 34, 34, 0.75);
+    border-radius: 5px;
+    background: rgba(178, 34, 34, 0.75);
+    color: white;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#button-request:hover {
+    border: 10px groove rgba(255, 255, 255, 0.75);
+}
+
