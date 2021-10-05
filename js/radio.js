@@ -17,16 +17,13 @@ const setUpButton = document.getElementById("controls-setUp")
 
 // ===== ENDINGS SET UP ===== //
 
-const failEndingButton = document.getElementById("button-ending-fail")
 const earlyEndingButton = document.getElementById("button-ending-earlyWin")
 const perfectEndingButton = document.getElementById("button-ending-perfectWin")
-const playEndingButton = document.getElementById("button-ending-play")
 
 const failEndingTrack = "paradoxRadioFail"
 const earlyEndingTrack = "paradoxRadioEarly"
 const perfectEndingTrack = "paradoxRadioOnTime"
 
-let selectedEndingButton
 let selectedEndTrack
 
 // ===== RADIO TRACK SET UP ===== //
@@ -99,20 +96,17 @@ function systemSetUp() {
     pauseButton.addEventListener("click", pauseRadio)
     resetButton.style.background = "palevioletred"
     resetButton.addEventListener("click", () => {
-        if (radioPlaying) { radioTrack.pause() }
+        radioPlaying && radioTrack.pause()
         clearInterval(trackTimeInterval)
         resetGame()
     })
     
     // activate ending buttons
-    failEndingButton.addEventListener("click", () => {
-        selectEnding(failEndingButton, failEndingTrack)
-    })
     earlyEndingButton.addEventListener("click", () => {
-        selectEnding(earlyEndingButton, earlyEndingTrack)
+        selectEnding(earlyEndingTrack)
     })
     perfectEndingButton.addEventListener("click", () => { 
-        selectEnding(perfectEndingButton, perfectEndingTrack) 
+        selectEnding(perfectEndingTrack) 
     })
 }
 
@@ -123,7 +117,6 @@ const nowPlayingTimeDisplay = document.getElementById("trackTimeRemaining")
 const nowPlaylingProgressBar = document.getElementById("trackDisplay-progressBar")
 let radioTrack
 let trackTimeInterval
-let gameTimeInterval
 let runningTime
 
 // ===== POP-UP SET UP ===== //
@@ -154,11 +147,8 @@ function resetGame() {
     nowPlayingTimeDisplay.textContent = "00:00"
     nowPlaylingProgressBar.style.right = "100%"
     
-    // reset to the default ending and set up the ending control buttons
-    selectedEndingButton = failEndingButton
-    selectedEndingButton.classList.add("button-ending-selected")
+    // reset to the default ending
     selectedEndTrack = failEndingTrack
-    playEndingButton.addEventListener("click", playEnding)  
     
     // reset timer
     totalSecsRemaining = 0
@@ -229,17 +219,9 @@ function trackEnd() {
         runningTime = 0
         playRadio()
     } else {
-        selectedEndingButton.classList.remove("button-ending-selected")
         resetGame()
     }
 }
-
-//function skipTrack(event) {         
-//    if (event.keyCode === 110) {
-//        radioTrack.pause()
-//        trackEnd()
-//    }
-//}       // ONLY USED IN DEBUGGING -> MAKE SURE EVENT LISTENER IS ACTIVE //
 
 // ===== TIME ===== //
 
@@ -266,7 +248,6 @@ function updateTimeRemaining() {
 // ===== CONTROLS ===== //
 
 setUpButton.addEventListener("click", systemSetUp)
-//window.addEventListener("keypress", skipTrack)      // PRESS N TO SKIP TRACK -> MAKE SURE skipTrack FUNCTION IS ACTIVE //
 
 function pressPlay() {
     playRadio()
@@ -294,20 +275,35 @@ function playlistCursor() {
 
 // ===== ENDING ===== //
 
-function selectEnding(button, track) {
+function selectEnding(track) {
     if (!gameOver) {
-        selectedEndingButton.classList.remove("button-ending-selected")
-        button.classList.add("button-ending-selected")
-        selectedEndingButton = button
         selectedEndTrack = track
+        radioTrack.pause()
+        currentTrack = musicData.length
+        playRadio()
+        earlyEndingButton.removeEventListener("click", selectEnding)
+        perfectEndingButton.removeEventListener("click", selectEnding)
     }
 }
 
-function playEnding() {
-    radioTrack.pause()
-    currentTrack = musicData.length
-    playRadio()
-    playEndingButton.removeEventListener("click", playEnding)
-}
-
 closePopUp.addEventListener("click", () => { endingPopUp.style.display = "none" })
+
+// ===== VOLUME DIP FOR CLUES ===== //
+
+const sendClue = document.getElementById('button-send')
+sendClue.addEventListener("click", () => {
+    radioTrack.volume(0.15)
+    setTimeout(() => radioTrack.volume(1), 2000)
+})
+
+// ===== DEBUGGING ONLY ===== //
+
+//function skipTrack(event) {         
+//    if (event.keyCode === 110) {
+//        radioTrack.pause()
+//        trackEnd()
+//    }
+//}      
+
+// PRESS N TO SKIP TRACK -> //
+//window.addEventListener("keypress", skipTrack)      
