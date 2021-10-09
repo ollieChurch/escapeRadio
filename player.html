@@ -4,11 +4,25 @@
             <link href="css/player.css" rel="stylesheet">
         </head>
         <body>
-            <div class='container-frosted'>
-                <h1>V.I.P. Help Desk</h1>
-                <p id='clue-display'></p>
-                <button id='button-request' class='clueRequested'>Request Help</button>
-            </div>
+            <main class='main-player'>
+                <div class='container container-clue'>
+                    <div class='clue-modal'>
+                        <div class='clue-modal-header'>
+                            <h2>!! IMPORTANT MESSAGE RECEIVED !!</h2>
+                        </div>
+                        <p id='clue-text'></p>
+                    </div>
+                </div>
+                <div class='container container-playerControl'>
+                    <div class=player-time>
+                        <p id="player-timeDisplay-mins">00</p>
+                        <p>:</p>
+                        <p id="player-timeDisplay-secs">00</p>
+                    </div>
+                    <button id='button-request' class='clueRequested'>Request Help</button>
+                </div>
+            </main>
+            
             <script src="js/clueSystem.js" type="module"></script>
         </body>
     </html>

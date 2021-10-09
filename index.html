@@ -3,12 +3,14 @@
     <head>
         <title>Paradox Radio Admin</title>
         <link href="css/admin.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cd8d681245.js" crossorigin="anonymous"></script>
     </head>
     
     <body>
         <header>
-            <img class="image-logo" src="images/logo.png" />
-            <h1>Paradox Radio</h1>
+            <i class="fas fa-running header-logo"></i>
+            <h1>Escape Radio</h1>
+            <a class='header-link' href='#'>help</a>
         </header>
         
         <main>
@@ -19,27 +21,33 @@
             <div class="container" id="clue-container">
                 <textarea 
                     id="clue-input" 
-                    maxlength='200' 
                     rows='6'
                     placeholder='write your custom message here'
                 ></textarea>
                 <div class='container-clueButtons'>
-                    <button id='button-hide' class='clueButtons'>Hide Clue</button>
-                    <button id="button-send" class='clueButtons'>Send Clue</button>
+                    <div class='clue-indicatorContainer'>
+                        <p>Clue Request: </p>
+                        <div class='clue-indicator'></div>
+                    </div>
+
+                    <div >      
+                        <button id='button-hide' class='clueButtons'>Hide Clue</button>
+                        <button id="button-send" class='clueButtons'>Send Clue</button>
+                    </div>
                 </div>
             </div>
         
             <div class="container trackDisplay-container">
-                    <h3>Now Playing</h3>
-                    <p id="currentTrack"></p>
-                    <div class="trackDisplay-visualContainer">
-                        <div class="trackDisplay-visual">
-                            <div id="trackDisplay-progressBar"></div>
-                        </div>
-                        <p class='trackDisplay-visual-text'>
-                            <span id="trackTimeRemaining">00:00</span></em>
-                        </p>
+                <h3>Now Playing</h3>
+                <p id="currentTrack"></p>
+                <div class="trackDisplay-visualContainer">
+                    <div class="trackDisplay-visual">
+                        <div id="trackDisplay-progressBar"></div>
                     </div>
+                    <p class='trackDisplay-visual-text'>
+                        <span id="trackTimeRemaining">00:00</span></em>
+                    </p>
+                </div>
             </div>
             
             <div class="container timeAndControls-container">
@@ -65,7 +73,7 @@
             <div class="container ending-container">
                     <button class="button-ending" id="button-ending-perfectWin">Perfect Win</button>
                     <button class="button-ending" id="button-ending-earlyWin">Early Win</button>
-            </div> <!--  ending-container  -->
+            </div> 
         </main>
         
         <div class="popUp" id="popUp-endGame">
