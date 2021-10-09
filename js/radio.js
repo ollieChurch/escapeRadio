@@ -87,19 +87,20 @@ function systemSetUp() {
     }) 
 
     playlistTrackCards = document.getElementsByClassName("playlist-trackCard")
-    trackCardHeight = playlistTrackCards[0].clientHeight
-    resetGame()
     
     // activate control buttons
-    playButton.style.background = "palegreen" // event listener for play button is added during function resetGame
-    pauseButton.style.background = "paleturquoise"
-    pauseButton.addEventListener("click", pauseRadio)
-    resetButton.style.background = "palevioletred"
-    resetButton.addEventListener("click", () => {
-        radioPlaying && radioTrack.pause()
-        clearInterval(trackTimeInterval)
+    setTimeout(() => {
         resetGame()
-    })
+        playButton.style.background = "palegreen" // event listener for play button is added during function resetGame
+        pauseButton.style.background = "paleturquoise"
+        pauseButton.addEventListener("click", pauseRadio)
+        resetButton.style.background = "palevioletred"
+        resetButton.addEventListener("click", () => {
+            radioPlaying && radioTrack.pause()
+            clearInterval(trackTimeInterval)
+            resetGame()
+        })
+    }, 6000)
     
     // activate ending buttons
     earlyEndingButton.addEventListener("click", () => {
@@ -146,7 +147,7 @@ function resetGame() {
     nowPlayingTitle.textContent = ""
     nowPlayingTimeDisplay.textContent = "00:00"
     nowPlaylingProgressBar.style.right = "100%"
-    
+
     // reset to the default ending
     selectedEndTrack = failEndingTrack
     
@@ -218,8 +219,6 @@ function trackEnd() {
         currentTrack ++
         runningTime = 0
         playRadio()
-    } else {
-        resetGame()
     }
 }
 
@@ -263,7 +262,8 @@ function updatePlaylist() {
         playlistTrackCards[prevTrack].classList.remove("nowPlaying")
         playlistTrackCards[prevTrack].classList.add("played")
     }
-    playlistContainer.scrollTop = (trackCardHeight * currentTrack)
+    trackCardHeight = playlistTrackCards[0].offsetHeight
+    playlistContainer.scrollTop = (trackCardHeight * currentTrack) - trackCardHeight
     if (!gameOver) { playlistTrackCards[currentTrack].classList.add("nowPlaying") }
 }
 
