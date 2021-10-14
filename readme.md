@@ -3,13 +3,14 @@ This is an escape game system which handles in-game soundtrack, receives clue re
 
 This prototype is made up of two screens, see below on how to set them up: 
 > Admin - [https://escaperadio.netlify.app](https://escaperadio.netlify.app)
+
 > Player - [https://escaperadio.netlify.app/player](https://escaperadio.netlify.app/player)
 
 ## Why Is The Time Remaining Based On The Audio Playlist?
 The game this was designed for centred around a recording studio. The story was that the radio station has lost the number 1 track in it's top 10 chart show, the team must enter the recording studio and remix that number 1 song before the radio station reaches number 1 in the charts. The audio playlist is the radio show so that the team can hear how close they are to number 1.
 
 ## How Do I Set It Up
-In practise this would be run on *local host* and the computer hooked up to two screens. One screen would be in the host's office, where they sit to monitor and run the game, this will have the */admin* page open. The other screen would be in the game for players to interact with, this will have the */player* page open. Audio from the computer would be routed to speakers inside the game. 
+In practise this would be run on *local host* and the computer hooked up to two screens. One screen would be in the host's office, where they sit to monitor and run the game, this will have the */admin* page open. The other screen would be in the game for players to interact with, this will have the */player* page open. Audio from the computer would be routed to speakers inside the game. The request help button would be a physical button communicating via a node.js backend, for the prototype demonstration this is a virtual button on screen. 
 
 **If you wish to test the prototype just open up the [admin](https://escaperadio.netlify.app) and [player](https://escaperadio.netlify.app/player) screens in different tabs or browser windows. See the image below for a visual example.**
 
