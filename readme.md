@@ -14,7 +14,7 @@ In practise this would be run on *local host* and the computer hooked up to two 
 
 **If you wish to test the prototype just open up the [admin](https://escaperadio.netlify.app) and [player](https://escaperadio.netlify.app/player) screens in different tabs or browser windows. See the image below for a visual example.**
 
-![Image](./images/hazard-background.jpg)
+![Image](./images/setUpExample.jpg)
 
 ## I Am All Set Up... Now How Does It Work?
 
