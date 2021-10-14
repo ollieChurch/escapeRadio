@@ -25,6 +25,7 @@ In practise this would be run on *local host* and the computer hooked up to two 
 5. When you are done showing that message to the player click `Hide Clue`
 6. If the team win the game you can choose from one of two endings
 > **Perfect ending**: The team have remixed the song just in time for the number 1 slot
+
 > **Early ending**: The team have remixed the song really fast
 7. If the time runs out then the team will automatically receive the fail ending
 8. Use the `Reset` button to reset the game for the next team
