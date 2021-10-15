@@ -1,4 +1,3 @@
-
 // ===== TIME REMAINING SET UP ===== //
 
 const gameMinsDisplay = document.getElementById("timeDisplay-mins")
