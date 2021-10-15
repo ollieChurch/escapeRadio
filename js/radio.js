@@ -290,8 +290,8 @@ closePopUp.addEventListener("click", () => { endingPopUp.style.display = "none" 
 
 // ===== VOLUME DIP FOR CLUES ===== //
 
-const sendClue = document.getElementById('button-send')
-sendClue.addEventListener("click", () => {
+const sendClueBtn = document.getElementById('button-send')
+sendClueBtn.addEventListener("click", () => {
     radioTrack.volume(0.15)
     setTimeout(() => radioTrack.volume(1), 2000)
 })
