@@ -38,8 +38,7 @@ main {
         'play clue'
         'play time'
         'play time'
-        'play time'
-        'play stop';
+        'play time';
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 1em;
@@ -244,6 +243,19 @@ button {
 
 /* ===== CONTROLS ===== */
 
+#setUp-container {
+    padding: 1em;
+    font-size: 1.25rem;
+}
+
+#setUp-container ol {
+    padding-left: 1em;
+}
+
+#setUp-container li {
+    padding: .5em 0;
+}
+
 .controls-container {
     display: flex;
     flex-direction: column;
@@ -265,46 +277,28 @@ button {
     background: lightgray;
 }
 
-#controls-setUp {
+.setUp-btn {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
 	background: green;
     color: white;
+    width: 7em;
+    padding: 0.75em 0;
+    margin: .5em 0;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.setUp-btn:hover,
+.setUp-btn:focus {
+    background: palegoldenrod;
+    color: black;
 }
 
 .controls-note {
     color: firebrick;
-}
-
-/* ===== ENDING ===== */
-
-.ending-container {
-    grid-area: stop;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-size: cover;
-    width: 100%;
-    padding: 1em;
-}
-
-.button-ending {
-    height: 3em;
-    width: 10em;
-    background-color: red;
-    border: 2px solid black;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-#button-ending-play {
-    background-color: palegoldenrod;
-    background-image: url(../images/hazard-background.jpg);
-    background-size: cover;
-    background-blend-mode:color;
-    width: 100%;
-    padding: .25em 0;
-    font-weight: bold;
-    font-size: 1.5rem;
 }
 
 /* ===== ENDING POP-UP ===== */
@@ -356,7 +350,6 @@ button {
         grid-auto-rows: unset;
         grid-template-areas: 
         'time'
-        'stop'
         'clue'
         'trac'
         'play';

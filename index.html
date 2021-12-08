@@ -16,7 +16,19 @@
         
         <main>
             <div class="container" id="playlist-container">
-                <button class="button-controls" id="controls-setUp">Set Up</button>
+                <div id='setUp-container'>
+                    <h3>Quick Start Guide for Testing</h3>
+                    <p>This is a basic guide, for more information click "help" in the header.</p>
+                    <ol>
+                        <li>Open the player window</li>
+                        <a class="button-controls setUp-btn" href="https://escaperadio.netlify.app/player" target="_blank">Open</a>
+                        <li>Arrange your screen so you can see both the admin and player windows</li>
+                        <li>Use the text box input to send messages to the player window</li>
+                        <li>Load the audio tracks and, once loaded, use the buttons under "time remaining" to control the game</li>
+                        <button class="button-controls setUp-btn" id="controls-setUp">Load</button>
+                    </ol>
+                     
+                </div>
             </div>
             
             <div class="container" id="clue-container">
@@ -66,15 +78,11 @@
                         <button class="button-controls" id="controls-play">Play</button>
                         <button class="button-controls" id="controls-pause">Pause</button>
                         <button class="button-controls" id="controls-reset">Reset</button>
+                        <button class="button-controls" id="button-ending-perfectWin">Win</button>
                     </div>
                     <p class="controls-note"><em>IMPORTANT: pausing the time will also pause the audio</em></p>
                 </div>
             </div>
-            
-            <div class="container ending-container">
-                    <button class="button-ending" id="button-ending-perfectWin">Perfect Win</button>
-                    <button class="button-ending" id="button-ending-earlyWin">Early Win</button>
-            </div> 
         </main>
         
         <div class="popUp" id="popUp-endGame">

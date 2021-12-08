@@ -12,22 +12,18 @@ let gameOver
 const playButton = document.getElementById("controls-play")
 const pauseButton = document.getElementById("controls-pause")
 const resetButton = document.getElementById("controls-reset")
+const endingButton = document.getElementById("button-ending-perfectWin")
 const setUpButton = document.getElementById("controls-setUp")
 
-// ===== ENDINGS SET UP ===== //
-
-const earlyEndingButton = document.getElementById("button-ending-earlyWin")
-const perfectEndingButton = document.getElementById("button-ending-perfectWin")
-
 const failEndingTrack = "paradoxRadioFail"
-const earlyEndingTrack = "paradoxRadioEarly"
-const perfectEndingTrack = "paradoxRadioOnTime"
+const winEndingTrack = "paradoxRadioOnTime"
 
 let selectedEndTrack
 
 // ===== RADIO TRACK SET UP ===== //
 
 const playlistContainer = document.getElementById("playlist-container")
+const setUpContainer = document.getElementById("setUp-container")
 
 import { musicData } from "./musicData.js"
 let playlistTrackCards = document.getElementsByClassName("playlist-trackCard")
@@ -36,7 +32,7 @@ let trackCardHeight
 let radioPlaying
 
 function systemSetUp() {
-    setUpButton.style.display = "none"
+    setUpContainer.style.display = "none"
     
     // get data for each track and add it to the playlist
     musicData.forEach(track => {
@@ -99,15 +95,11 @@ function systemSetUp() {
             clearInterval(trackTimeInterval)
             resetGame()
         })
-    }, 6000)
-    
-    // activate ending buttons
-    earlyEndingButton.addEventListener("click", () => {
-        selectEnding(earlyEndingTrack)
-    })
-    perfectEndingButton.addEventListener("click", () => { 
-        selectEnding(perfectEndingTrack) 
-    })
+        endingButton.style.background = "palegoldenrod"
+        endingButton.addEventListener("click", () => { 
+            selectEnding(winEndingTrack) 
+        })
+    }, 5000)
 }
 
 // ===== NOW PLAYING SET UP ===== //
@@ -277,11 +269,10 @@ function playlistCursor() {
 function selectEnding(track) {
     if (!gameOver) {
         selectedEndTrack = track
-        radioTrack.pause()
+        radioPlaying && radioTrack.pause()
         currentTrack = musicData.length
         playRadio()
-        earlyEndingButton.removeEventListener("click", selectEnding)
-        perfectEndingButton.removeEventListener("click", selectEnding)
+        endingButton.removeEventListener("click", selectEnding)
     }
 }
 
