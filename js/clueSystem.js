@@ -69,7 +69,7 @@ if (window.location.pathname === '/player') {
     })
 
     setInterval(() => {
-        const adminMins = adminMinsDisplay.value ? adminMinsDisplay.value : '60'
+        const adminMins = adminMinsDisplay.value ? adminMinsDisplay.value : '00'
         const adminSecs = adminSecsDisplay.value ? adminSecsDisplay.value : '00'
 
         timeChannel.postMessage({
