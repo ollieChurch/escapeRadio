@@ -9,6 +9,9 @@ This prototype is made up of two screens, see below on how to set them up:
 ## Why Is The Time Remaining Based On The Audio Playlist?
 The game this was designed for centred around a recording studio. The story was that the radio station has lost the number 1 track in it's top 10 chart show, the team must enter the recording studio and remix that number 1 song before the radio station reaches number 1 in the charts. The audio playlist is the radio show so that the team can hear how close they are to number 1.
 
+## Compaibility
+Due to the Broadcast Channel API, this prototype does not currently work in Safari.
+
 ## How Do I Set It Up
 In practise this would be run on *local host* and the computer hooked up to two screens. One screen would be in the host's office, where they sit to monitor and run the game, this will have the *admin* page open. The other screen would be in the game for players to interact with, this will have the *player* page open. Audio from the computer would be routed to speakers inside the game. The request help button would be a physical button communicating via a node.js backend, for the prototype demonstration this is a virtual button on screen. 
 
